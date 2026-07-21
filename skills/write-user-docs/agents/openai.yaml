@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write User Docs"
+  short_description: "Write clear, user-facing software documentation"
+  default_prompt: "Use $write-user-docs to write or revise these docs for their intended users."
