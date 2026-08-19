@@ -1,0 +1,4 @@
+interface:
+  display_name: "Refactoring UI"
+  short_description: "Systematic refinement for existing interfaces"
+  default_prompt: "Use $refactoring-ui to audit and refine this existing interface in leverage order."
