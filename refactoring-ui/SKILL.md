@@ -72,5 +72,6 @@ For a substantial design, redesign, or full-page review, read [references/princi
 - Inspect the result at the actual target viewport sizes, including at least one narrow and one wide layout when responsive behavior is in scope.
 - Confirm the eye lands on the intended primary information and action.
 - Confirm related items group clearly, interactive states remain discoverable, text is readable, and no content clips or overflows.
-- If implementation tools allow screenshots, compare the rendered result rather than relying only on code inspection.
+- When a runnable interface and rendering tool are available, render the affected states and inspect screenshots; do not treat code inspection alone as visual verification.
+- If rendered verification is unavailable, state that verification was code-only and identify the unverified viewports or states.
 - Report the important design decisions and any deliberate tradeoffs; do not list every token-level change.

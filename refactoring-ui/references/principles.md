@@ -43,6 +43,7 @@ Then make those roles perceptible:
 ## 4. Design the Text
 
 - Prefer the existing type system. If one is absent, start with a small hand-tuned scale such as `12, 14, 16, 18, 20, 24, 30, 36, 48` and add only demonstrated needs.
+- Define font-size tokens in `rem` or `px`, not `em`, so nested elements remain on the intended scale. Relative units such as `em` are still useful for content measure; `20-35em` is a practical starting range for prose.
 - Choose a highly legible family for interface text. Verify the required weights and scripts instead of choosing on personality alone.
 - Keep paragraph lines around 45-75 characters where practical. Allow images, tables, and code to exceed the prose measure without widening the prose itself.
 - Use taller line-height for small text and long lines; tighten large headings. A single line-height ratio should not govern every size.
@@ -62,6 +63,8 @@ Define colors by role, not by individual component:
 Use enough shades to support real interface states without creating indistinguishable options. Five shades may be sufficient for a narrow accent; a frequently used neutral or primary ramp may need closer to nine.
 
 Choose the useful middle, darkest, and lightest colors in real contexts first, then fill the gaps. Evaluate the resulting ramp visually instead of assuming equal numeric steps produce equal perceived steps. Slightly tinted neutrals can make the interface feel warmer or cooler.
+
+Tune ramps in a color model that makes hue, saturation or chroma, and lightness explicit; HSL is the book's example, but preserve the project's established model when one exists. As shades approach light or dark endpoints, adjust saturation or chroma to prevent them from looking washed out. Small hue shifts toward perceptually brighter or darker hues can preserve intensity, but keep the shifts restrained so every shade still reads as the same color family.
 
 For accessibility and hierarchy:
 
