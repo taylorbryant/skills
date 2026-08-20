@@ -85,6 +85,15 @@ Do not narrate the work inside the documentation. Put implementation notes and e
 - Use descriptive link text that names the destination.
 - Preserve the project's established voice unless the user requests a broader rewrite.
 
+## Make instructions easy to parse
+
+- Put applicable conditions and context before the action they govern.
+- Put the common path before exceptions and optional branches.
+- Give the reader one decision or meaningful action per procedural step. Combine tightly coupled actions only when separating them would make the procedure harder to follow.
+- Keep modifiers such as `only` and `not` next to the words they modify.
+- Make every pronoun point to one unmistakable noun. Repeat the noun when needed.
+- Use one public name for each concept, action, option, and component. Prefer the real public identifier over a synonym.
+
 ## Write useful code examples
 
 - Use the repository's preferred language, package manager, formatting, and documentation components.
@@ -120,5 +129,7 @@ Before finishing, check:
 - Does the page tell the intended reader what they can do and how to do it?
 - Does any sentence discuss maintainers, tests, refactors, internals, or the editing process without a user-visible reason?
 - Are commands, identifiers, defaults, and behavioral claims verified?
+- Does each procedure put applicable context before the action and keep one reader decision per step?
+- Can every pronoun and modifier be read only one way? Does each thing keep the same public name?
 - Do examples include the setup and expected result needed to use them?
 - Did implementation rationale stay in the handoff rather than leak into the published copy?
