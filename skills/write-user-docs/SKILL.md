@@ -124,6 +124,19 @@ For writing or revision requests, make the requested edits and summarize materia
 
 For review-only requests, do not edit files. Group actionable findings by file and use `path:line` locations. Explain a rule only when the fix is not obvious. Prioritize correctness and audience problems over low-value stylistic preferences.
 
+### Read without project history
+
+For READMEs, guides, and current architecture docs, reread changed prose as someone who has not seen previous versions, related PRs, or the conversation. Apply this pass to maintainer-facing guides too; new contributors may lack that history.
+
+Review words such as `now`, `still`, `remains`, `continues`, and `no longer`. When they imply an unexplained previous state, describe the current behavior directly:
+
+- "BlockNote remains the editor." → "The page editor uses BlockNote."
+- "Database saves still write full snapshots." → "Each database save writes a full snapshot."
+
+Treat these words as review cues, not banned words. Preserve meaningful runtime behavior such as "Edits remain available while offline." Keep comparisons when readers need them for migration, compatibility, or release notes, and make the relevant versions or conditions explicit.
+
+### Final checks
+
 Before finishing, check:
 
 - Does the page tell the intended reader what they can do and how to do it?
