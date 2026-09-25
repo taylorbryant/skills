@@ -1,6 +1,6 @@
 ---
 name: write-user-docs
-description: Write, revise, and review user-facing documentation for software libraries, frameworks, APIs, CLIs, CMS products, and developer tools. Use for READMEs, guides, tutorials, reference documentation, troubleshooting pages, public changelogs, release notes, and documentation copy. Keep maintainer rationale, implementation history, source-tree details, tests, and editing commentary out of user-facing prose unless they affect public behavior.
+description: Write, revise, and review user-facing documentation for software libraries, frameworks, APIs, CLIs, CMS products, and developer tools. Use for READMEs, guides, tutorials, reference documentation, troubleshooting pages, public changelogs, release notes, and documentation copy.
 ---
 
 # Write User Docs
@@ -13,10 +13,11 @@ Before writing or reviewing:
 
 1. Read applicable repository instructions, including `AGENTS.md` and `CONTRIBUTING.md`.
 2. Read nearby documentation to learn its terminology, structure, and voice.
-3. Inspect the implementation, tests, schemas, or generated API surface needed to verify technical claims.
-4. Follow repository-specific conventions over this skill.
+3. Establish the version the documentation targets. Do not present unreleased behavior as available in a released version.
+4. Inspect the implementation, tests, schemas, or generated API surface for that version as needed to verify technical claims.
+5. Follow repository-specific conventions over this skill.
 
-Do not infer public behavior from names alone. Treat the implementation and declared public contracts as the source of truth.
+Do not infer public behavior from names alone. When implementation, tests, and declared public contracts disagree, investigate the discrepancy instead of silently choosing one. Do not turn a possible bug into a documented guarantee. If the conflict remains unresolved, flag it in the handoff and avoid asserting the disputed claim as fact.
 
 ## Classify the audience
 
@@ -70,7 +71,7 @@ Translate internal framing into user-facing framing:
 | "Tests cover malformed configuration." | Describe the validation guarantee and resulting error. |
 | "The refactor makes future providers easier to add." | Omit it until users can select another provider. |
 
-Do not narrate the work inside the documentation. Put implementation notes and editing rationale in the final handoff, pull request description, or an appropriate maintainer document.
+Put implementation notes and editing rationale in the final handoff, pull request description, or an appropriate maintainer document.
 
 ## Write clear product documentation
 
@@ -79,7 +80,7 @@ Do not narrate the work inside the documentation. Put implementation notes and e
 - Address the reader directly when they act. Use imperative verbs for procedures and present tense for current behavior.
 - Prefer concrete subjects and actions. Name the actor when passive construction obscures responsibility.
 - Replace `easy`, `simple`, `quick`, and `just` with concrete information such as the number of steps, defaults involved, or prerequisites.
-- Replace vague claims such as `fast`, `significant`, `typically`, or `most` with verified specifics, or remove the claim.
+- Replace unsupported generalizations with verified specifics, or remove the claim. Preserve meaningful uncertainty, including qualifiers such as `typically` or `most` when supported, and explain the conditions when known. Never invent precision.
 - Keep one main idea per paragraph. Use lists for genuinely list-shaped information, not merely to shorten prose.
 - Define unfamiliar terms and acronyms when the intended reader is likely to need them. Avoid unnecessary link density.
 - Use descriptive link text that names the destination.
@@ -140,9 +141,8 @@ Treat these words as review cues, not banned words. Preserve meaningful runtime 
 Before finishing, check:
 
 - Does the page tell the intended reader what they can do and how to do it?
-- Does any sentence discuss maintainers, tests, refactors, internals, or the editing process without a user-visible reason?
-- Are commands, identifiers, defaults, and behavioral claims verified?
+- Are internal details included only when they explain a user-visible consequence?
+- Are commands, identifiers, defaults, and behavioral claims verified for the target version, with unresolved conflicts reported in the handoff?
 - Does each procedure put applicable context before the action and keep one reader decision per step?
 - Can every pronoun and modifier be read only one way? Does each thing keep the same public name?
 - Do examples include the setup and expected result needed to use them?
-- Did implementation rationale stay in the handoff rather than leak into the published copy?

@@ -19,7 +19,13 @@ For net-new UI, use this skill only when the user explicitly invokes it or asks 
 
 For a substantial design, redesign, or full-page review, read [references/principles.md](references/principles.md) before acting. For a small isolated edit, use the workflow below directly.
 
+## Establish a Visual Baseline
+
+Before substantial refinement or review, inspect the current interface at representative viewports and states, rendering it when a runnable interface and rendering tool are available. Ground findings in observed problems. If rendered inspection is unavailable, distinguish code-supported findings from visual hypotheses; do not present inferred visual problems as observed facts.
+
 ## Work in Leverage Order
+
+Use this order to diagnose broad problems. For focused requests, start with the relevant area and revisit earlier decisions only when they cause the issue.
 
 1. **Function and content**
    - Identify the user's main job, the smallest useful feature, the primary action, required information, and important states.
@@ -69,7 +75,7 @@ For a substantial design, redesign, or full-page review, read [references/princi
 
 ## Verify
 
-- Inspect the result at the actual target viewport sizes, including at least one narrow and one wide layout when responsive behavior is in scope.
+- Inspect the result at the actual target viewport sizes, including at least one narrow and one wide layout when responsive behavior is in scope. Compare affected states with any available baseline to confirm the intended improvement.
 - Confirm the eye lands on the intended primary information and action.
 - Confirm related items group clearly, interactive states remain discoverable, text is readable, and no content clips or overflows.
 - When a runnable interface and rendering tool are available, render the affected states and inspect screenshots; do not treat code inspection alone as visual verification.
